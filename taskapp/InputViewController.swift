@@ -37,7 +37,7 @@ class InputViewController: UIViewController {
             self.task.contents = self.contentsTextView.text
             self.task.category = self.categoryTextField.text!
             self.task.date = self.datePicker.date
-            self.realm.add(self.task, update: true)
+            self.realm.add(self.task, update: Realm.UpdatePolicy.all)
         }
         setNotification(task: task)
         super.viewWillDisappear(animated)
